@@ -1,0 +1,10 @@
+pulp
+pandas
+numpy
+openpyxl
+geopy
+matplotlib
+jupyter
+streamlit
+streamlit-folium
+folium
