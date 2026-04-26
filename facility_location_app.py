@@ -114,6 +114,49 @@ def render_map(fac_df: pd.DataFrame, cust_df: pd.DataFrame, sol):
 st.title("Capacitated Facility Location Optimizer")
 st.caption("Decide which distribution centres to open, and which customer each one should serve, to minimise total annual cost.")
 
+with st.expander("How to use this app", expanded=False):
+    st.markdown("""
+**What this app does in plain English.**
+Imagine you run a company with 7 possible warehouse locations. Each
+warehouse has a fixed cost to open (rent, salaries) and a maximum
+capacity it can handle. You also have 10 customers, each with a
+different demand and a different shipping cost from each warehouse.
+The question: which warehouses should you open, and which warehouse
+should serve each customer, to minimise your total cost? This app
+solves that puzzle using **mixed-integer linear programming** — a
+mathematical optimisation technique used everywhere in supply-chain
+planning.
+
+**Quick start (60 seconds).**
+1. Look at the **Facilities** and **Customers** tables — these are
+   editable. Click any cell to change the number.
+2. Adjust the **Maximum facilities to open** slider in the sidebar
+   (e.g. cap it at 3).
+3. Click **Solve** — the optimiser figures out the cheapest plan.
+4. See the **map** showing which warehouses opened (green pins) and
+   which customer each one serves (lines).
+
+**The key controls.**
+- **Facilities table** — each row is a candidate warehouse with its
+  fixed annual cost and capacity. You can add, delete, or edit rows.
+- **Customers table** — each row is a customer with their demand and
+  the per-unit shipping cost from each warehouse.
+- **Maximum facilities to open** — you can force the model to open at
+  most N warehouses. Lower = fewer warehouses open but possibly higher
+  shipping cost. Try 1, 2, 3 and watch the trade-off.
+
+**What the results show.**
+- **Total cost** — sum of fixed open costs + variable shipping costs.
+- **Map** — green pins = open warehouses, grey = closed. Lines connect
+  each customer to the warehouse that serves them.
+- **Assignment table** — exactly which customer goes to which
+  warehouse, and how much it costs.
+
+**Try this.** Set Maximum facilities to 1 first (cheap to open, expensive
+to ship). Then 3. Then 5. Watch how the cost curve flattens — usually
+opening a 4th or 5th warehouse doesn't save much over having 3.
+""")
+
 if "facilities" not in st.session_state:
     fac, cust = load_default()
     st.session_state["facilities"] = fac
