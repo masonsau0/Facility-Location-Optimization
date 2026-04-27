@@ -1,6 +1,6 @@
 # Capacitated Facility Location Optimizer
 
-**[Live demo](https://facility-location-optimization.streamlit.app)** — runs in your browser, no install required.
+**[Live demo](https://mason-facility-location.streamlit.app/)** — runs in your browser, no install required.
 
 An end-to-end **distribution network design** project that decides which
 distribution centres to open and how to route customer demand through them so
