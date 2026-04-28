@@ -1,6 +1,6 @@
 # Capacitated Facility Location Optimizer
 
-**[Live demo](https://mason-facility-location.streamlit.app/)** : runs in the browser, no install required.
+**[Live demo](https://mason-facility-location.streamlit.app/)**: runs in the browser, no install required.
 
 An end-to-end **distribution network design** project that decides which
 distribution centres to open and how to route customer demand through them so
@@ -17,7 +17,7 @@ shipped with three layers of access:
    transport rates, force facilities open or closed, and re-solve in real
    time on a folium map.
 
-No solver licence required : the model uses **CBC**, which ships with PuLP.
+No solver licence required: the model uses **CBC**, which ships with PuLP.
 
 ![Optimal network](network_solution.png)
 
@@ -43,7 +43,7 @@ Total candidate capacity: **1,290 units/yr**.
 **10 customer cities** (Nashville, Tampa, Orlando, Raleigh, Savannah, Columbia,
 Mobile, Knoxville, Tallahassee, Greenville) with annual demands ranging from 55
 to 110 units, totalling **785 units/yr**. The capacity slack (~500 units) is
-intentional : the optimiser can choose to open a smaller subset.
+intentional: the optimiser can choose to open a smaller subset.
 
 **Transport costs** are derived from great-circle distance between facility
 and customer, multiplied by a road-distance factor (1.3) and a unit transport
@@ -81,7 +81,7 @@ example to optimality in roughly 100 ms.
 | Total annual cost | **$538,000** |
 | Fixed cost | $520,000 (97 %) |
 | Transport cost | $18,000 (3 %) |
-| Facilities open | **4 of 7** : Charlotte, Miami, Atlanta, Charleston |
+| Facilities open | **4 of 7**: Charlotte, Miami, Atlanta, Charleston |
 | Facilities closed | Jacksonville, Memphis, Birmingham |
 | Solve time | ~100 ms (CBC) |
 
